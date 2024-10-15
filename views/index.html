@@ -14,7 +14,8 @@
     ></script>
   </head>
   <body>
-    {{ template "count" .}}
+    <div id="count">{{ template "count" .}}</div>
+    <button hx-target="#count" hx-post="/count">Count</button>
   </body>
 </html>
 {{end}}
@@ -24,6 +25,5 @@
 {{ block "count" .}}
 
 <span> Count {{ .Count }} </span>
-<button hx-target="body" hx-post="/count">Count</button>
 
 {{ end }}
